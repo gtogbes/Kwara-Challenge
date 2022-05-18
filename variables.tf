@@ -3,7 +3,7 @@
 #-----------------------------------------------------------------------------------------------------------
 
 variable "owner" {
-  default = "Godstime"
+  default = "gtogbes"
 }
 
 variable "environment" {
