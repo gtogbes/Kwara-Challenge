@@ -1,4 +1,4 @@
-name: "Terraform-Plan-Infra-Plan"
+name: "Terraform-Infra-Plan"
 
 on:
   push:
