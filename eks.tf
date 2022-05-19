@@ -59,7 +59,7 @@ module "eks" {
   
   vpc_id = module.vpc.vpc_id
    
-  node_group = {
+  node_groups = {
     first = {
       desired_capacity = 1
       max_capacity     = 3
