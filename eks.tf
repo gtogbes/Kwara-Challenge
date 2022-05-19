@@ -13,7 +13,7 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.cluster.token
   load_config_file       = false
-  version                = "~> 3.0"
+  version                = "~> 1.11.0"
 }  
 
 ## Availability zones 
@@ -78,7 +78,7 @@ data "aws_s3_bucket" "getbucket" {
   bucket = "kwara-bucket"
 }
 ## S3 bucket object upload
-resource "aws_s3_object" "object" {
+resource "aws_s3_bucket_object" "object" {
   bucket = data.aws_s3.getbucket.id
   key    = module.eks.kubeconfig_filename
   source = "./${module.eks.kubeconfig_filename}"
