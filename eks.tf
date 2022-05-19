@@ -78,8 +78,8 @@ data "aws_s3_bucket" "getbucket" {
   bucket = "kwara-bucket"
 }
 ## S3 bucket object upload
-resource "aws_s3_bucket_object" "object" {
-  bucket = data.aws_s3_bucket.getbucket.id
+resource "aws_s3_object" "object" {
+  bucket = data.aws_s3.getbucket.id
   key    = module.eks.kubeconfig_filename
   source = "./${module.eks.kubeconfig_filename}"
 }
