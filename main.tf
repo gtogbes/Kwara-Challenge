@@ -7,7 +7,6 @@ terraform {
     bucket = "kwara-bucket"
     key    = "eu-west-1/tfstate.json"
     region = "eu-west-1"
-    encrypt = true
   }
 }
 
