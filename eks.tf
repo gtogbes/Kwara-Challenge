@@ -17,7 +17,7 @@ provider "kubernetes" {
 }  
 
 ## Availability zones 
-data "aws_availabiltity_zones" "available" {
+data "aws_availability_zones" "available" {
 }
   
 ## Cluster Names
