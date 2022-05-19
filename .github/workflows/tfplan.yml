@@ -12,7 +12,7 @@ jobs:
     env:	
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_REGION: 'us-west-1'
+      AWS_REGION: 'eu-west-1'
 
     steps:
       - name: Checkout
@@ -25,7 +25,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -backend-config="access_key=${{ secrets.AWS_KEY_ID }}"" -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
 
       - name: Terraform Plan
         id: plan
