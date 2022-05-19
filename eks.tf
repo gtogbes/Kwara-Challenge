@@ -13,7 +13,7 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.cluster.token
   load_config_file       = false
-  version                = "~> 1.11"
+  version                = "~> 1.2.0"
 }  
 
 ## Availability zones 
@@ -25,7 +25,7 @@ locals {
   cluster_name = "kwara-cluster"
 }
   
-modules "vpc" {
+module "vpc" {
   source   = "terraform-aws-modules/vpc/aws"
   version  = "2.58.0"
   
@@ -49,7 +49,7 @@ modules "vpc" {
   }
 }
 
-modules "eks" {
+module "eks" {
   source   = "terraform-aws-modules/eks/aws"
   version  = "12.2.0"
   
