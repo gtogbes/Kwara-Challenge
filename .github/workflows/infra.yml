@@ -5,10 +5,10 @@ name: AWS kwara challenge Infra Provision
 on:
   push:
     branches:
-    - main
+    - min
   pull_request:
     branches:
-    - main
+    - min
 
 jobs:
   eks-flux:
