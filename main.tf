@@ -1,15 +1,16 @@
-provider "aws" {
-  region  = var.aws_region
-}
-
 terraform {
+  #specifying terraform version
+  required_version = ">= 0.12.24"
+  
   backend "s3" {
     bucket = "kwara-bucket"
-    key    = "eu-west-1/tfstate.json"
+    key    = "kwarachallenge.tfstate"
     region = "eu-west-1"
   }
 }
 
-resource "random_id" "id" {
-  byte_length = 2
+provider "random" {}
+## provider eu-west-1
+provider "aws" {
+  region = "eu-west-1"
 }
