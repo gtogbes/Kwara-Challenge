@@ -25,9 +25,9 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init /infra
+        run: terraform init -chdir /infra
 
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        run: terraform plan -no-color /infra
+        run: terraform plan -no-color -chdir /infra
