@@ -1,5 +1,5 @@
-resource "aws_iam_role" "demo" {
-  name = "eks-cluster-demo"
+resource "aws_iam_role" "kwara" {
+  name = "eks-cluster-4-kwara"
 
   assume_role_policy = <<POLICY
 {
@@ -19,11 +19,11 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "demo-AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.demo.name
+  role       = aws_iam_role.kwara.name
 }
 
-resource "aws_eks_cluster" "demo" {
-  name     = "demo"
+resource "aws_eks_cluster" "kwara" {
+  name     = "kwara"
   role_arn = aws_iam_role.demo.arn
 
   vpc_config {
@@ -35,5 +35,5 @@ resource "aws_eks_cluster" "demo" {
     ]
   }
 
-  depends_on = [aws_iam_role_policy_attachment.demo-AmazonEKSClusterPolicy]
+  depends_on = [aws_iam_role_policy_attachment.kwara-AmazonEKSClusterPolicy]
 }
