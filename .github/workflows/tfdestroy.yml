@@ -24,4 +24,4 @@ jobs:
 
       - name: Terraform Destroy
         id: Destroy
-        run: terraform Destroy
+        run: terraform destroy
