@@ -25,6 +25,8 @@ STEPS TO DEPLOYMENT
   run 
   Kubectl apply -f
   
+To use the deploy workflow, add your cluster kubeconfig file as secret to your repo, and run the workflow on either Push, merge, or on d
+  
   to view the Kibana dashbord
   run
   kubectl port-forward <kibana-pod-name> 5601:5601
